@@ -24,7 +24,7 @@ export class ProductService {
   }
   editProduct(product: ProductModule) {
     const index = this.products.findIndex((pr) => {
-      pr.uid = product.uid;
+      pr.uid === product.uid;
     });
     if (index !== -1) {
       this.products[index] = product;

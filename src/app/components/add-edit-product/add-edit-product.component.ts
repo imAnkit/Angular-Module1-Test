@@ -34,6 +34,9 @@ export class AddEditProductComponent implements OnInit {
       this.route.navigate(['/home']);
     } else {
       this.productService.addProduct(this.product!);
+      this.productService.productsListChanged.emit(
+        this.productService.getProducts()
+      );
       this.route.navigate(['/home']);
     }
     this.resetForm();

@@ -1,5 +1,5 @@
 export class ProductModule {
-  uid: number;
+  readonly uid: number = Math.random();
   product: string;
   price: number;
   description: string;
@@ -10,7 +10,6 @@ export class ProductModule {
     description: string,
     outOfStock: boolean
   ) {
-    this.uid = Math.random();
     this.product = product;
     this.price = price;
     this.description = description;
