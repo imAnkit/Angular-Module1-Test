@@ -1,9 +1,15 @@
-<div class="container">
-  <div class="row">
+<div
+  class="container"
+  (click)="navigateToDetails(product?.uid)"
+  style="cursor: pointer"
+>
+  <div class="row" appHighlightProduct [stock]="product!.outOfStock">
     <p>{{ product?.product }}</p>
-    <p>{{ product?.description }}</p>
     <p>{{ product?.price }}</p>
-    <p>{{ product?.outOfStock }}</p>
   </div>
+  <button class="btn btn-success" (click)="EditProduct(productId)">Edit</button>
+  <button class="btn btn-danger" (click)="DeleteProduct(productId)">
+    Delete
+  </button>
   <br />
 </div>

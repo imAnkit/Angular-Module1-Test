@@ -9,8 +9,8 @@ const routes: Routes = [
   {
     path: 'home',
     component: ProductsListComponent,
-    children: [{ path: ':uid', component: ProductDetailsComponent }],
   },
+  { path: 'home/:uid', component: ProductDetailsComponent },
   { path: 'add', component: AddEditProductComponent },
   { path: 'edit/:uid', component: AddEditProductComponent },
 ];

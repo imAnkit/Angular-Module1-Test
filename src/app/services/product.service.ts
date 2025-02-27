@@ -6,7 +6,7 @@ import { ProductModule } from '../models/product/product.module';
 })
 export class ProductService {
   private products: ProductModule[] = [
-    new ProductModule('new', 23, 'hello', false),
+    new ProductModule('new', 23, 'hello', true),
     new ProductModule('new', 23, 'hello', false),
   ];
   productsListChanged = new EventEmitter<ProductModule[]>();
@@ -15,7 +15,7 @@ export class ProductService {
     return this.products.slice();
   }
   getProductById(uid: number) {
-    return this.products.find((product) => product.uid === uid);
+    return this.products.find((pr) => pr.uid === uid);
   }
 
   addProduct(product: ProductModule) {

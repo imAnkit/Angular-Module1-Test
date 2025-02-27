@@ -1,13 +1,16 @@
-<div class="navbar">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <h2>Product Management</h2>
+    <a class="navbar-brand" href="#">Product Management</a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/add">Add Product</a>
+        </li>
+      </ul>
     </div>
   </div>
-  <div class="collapse navbar-collapse">
-    <ul class="nav navbar-nav">
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/add">Add Product</a></li>
-    </ul>
-  </div>
-</div>
+</nav>

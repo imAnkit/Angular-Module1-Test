@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductModule } from 'src/app/models/product/product.module';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -16,9 +17,22 @@ export class ProductItemComponent implements OnInit {
     description: 'hello',
     outOfStock: false,
   };
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private router: Router) {}
 
   ngOnInit(): void {
-    this.product = this.productService.getProductById(this.productId);
+    if (this.productService.getProductById(this.productId)) {
+      this.product = this.productService.getProductById(this.productId);
+    }
+  }
+
+  EditProduct(uid: number) {
+    this.router.navigate(['/edit', this.product?.uid]);
+  }
+  DeleteProduct(uid: number) {
+    this.productService.deleteProduct(uid);
+  }
+
+  navigateToDetails(uid: number | undefined) {
+    this.router.navigate(['/home', uid]);
   }
 }
