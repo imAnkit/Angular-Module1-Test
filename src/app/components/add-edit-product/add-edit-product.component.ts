@@ -29,7 +29,7 @@ export class AddEditProductComponent implements OnInit {
     }
   }
   addOrEditProduct() {
-    if (this.product!.uid !== null) {
+    if (this.product!.uid) {
       this.productService.editProduct(this.product!);
       this.route.navigate(['/home']);
     } else {
